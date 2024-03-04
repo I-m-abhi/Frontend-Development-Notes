@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Reveal</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+    h1 {
+      font-size: 35px;
+      letter-spacing: 2px;
+      position: relative;
+
+      &::before {
+        content: 'SUBSCRIBE...';
+        position: absolute;
+        overflow: hidden;
+        color: rgba(255, 196, 0, 0.897);
+        border-inline-end: 3px solid rgba(255,196,0,0.897);
+        animation: textReveal 2s linear infinite;
+      }
+    }
+
+    @keyframes textReveal {
+      0% {
+        width: 0%;
+      }
+      50% {
+        width: 100%;
+      }
+      100% {
+        width: 0%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>SUBSCRIBE...</h1>
+</body>
+</html>
