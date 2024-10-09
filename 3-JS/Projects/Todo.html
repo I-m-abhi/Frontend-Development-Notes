@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo - Application</title>
+  <style>
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      max-width: 1200px;
+      overflow: auto;
+      margin: 0 auto;
+      padding: 20px;
+
+      &>div {
+        text-align: center;
+        padding: 10px;
+      }
+
+      & .btn {
+        background-color: green;
+        color: white;
+        padding: 10px;
+        width: 130px;
+        border: none;
+        border-radius: 10px;
+      }
+
+      & .deleteBtn {
+        background-color: red;
+        color: white;
+        padding: 10px;
+        width: 130px;
+        border: none;
+        border-radius: 10px;
+      }
+
+      & input {
+        width: 30%;
+      }
+    }
+
+    .main-todo-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 305px;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Todo Application</h1>
+  <br>
+  <form>
+    <div>
+      <input type="text" id="inputValue">
+      <button class="btn">Add Todo</button>
+    </div>
+    <section class="todo-lists-elem"></section>
+  </form>
+
+  <script>
+    const inputValue = document.getElementById('inputValue')
+    const mainTodoItem = document.querySelector('.todo-lists-elem');
+    
+    const getTodoList = () => {
+      return JSON.parse(localStorage.getItem('TodoList'));
+    }
+
+    let todoList = getTodoList() || [];
+
+
+    const addDynamicTodo = (element) => {
+      const divElement = document.createElement('div');
+      divElement.classList.add('main-todo-div');
+      divElement.innerHTML = `<li>${element}</li> <button class="deleteBtn">Delete</button>`;
+      mainTodoItem.append(divElement);
+    }
+
+    const addTodoList = (e) => {
+      e.preventDefault();
+      let todoListValue = inputValue.value.trim();
+      inputValue.value = '';
+
+      if (todoListValue !== '' && !todoList.includes(todoListValue)) {
+        todoList.push(todoListValue);
+        todoList = [...new Set(todoList)];
+        localStorage.setItem('TodoList', JSON.stringify(todoList));
+        addDynamicTodo(todoListValue);
+      }
+    }
+
+    const showTodoList = () => {
+      todoList.map((element) => {
+        addDynamicTodo(element);
+      })
+    }
+    showTodoList();
+
+    // window.addEventListener("DOMContentLoaded", (event) => {
+    //   const deleteBtnElem = document.querySelector('.deleteBtn');
+    //   if (deleteBtnElem) {
+    //     deleteBtnElem.addEventListener('click', (e) => {
+    //       e.preventDefault();
+    //       const preChild = deleteBtnElem.si.innerText;
+    //       console.log(preChild);
+    //       console.log(event);
+    //     });
+    //   }
+    // })
+    const removeTodoElem = (e) => {
+      const todoToRemove = e.target;
+      const todoListContent = todoToRemove.previousElementSibling.innerText;
+      const deletedContent = todoToRemove.parentElement;
+      todoList = todoList.filter((item)=> {
+        return item !== todoListContent;
+      })
+      console.log(todoList);
+      localStorage.setItem('TodoList', JSON.stringify(todoList));
+      deletedContent.remove();
+    }
+
+    mainTodoItem.addEventListener('click', (e) => {
+      e.preventDefault();
+      if(e.target.classList.contains('deleteBtn')) {
+        removeTodoElem(e);
+      };
+    })
+    document.querySelector('.btn').addEventListener('click', (e) => {
+      addTodoList(e);
+    })
+  </script>
+</body>
+
+</html>

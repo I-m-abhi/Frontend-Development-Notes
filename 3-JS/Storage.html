@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Storage & Session Storage</title>
+</head>
+<body>
+  <script>
+    let newTime = new Date;
+    // let newTime = new Date('25 jan 1999');
+    // let newTime = new Date(1999, 10, 6);
+    // console.log(new Date().getTime());
+
+
+const addDaysToDate = (date, extraDay)=> {
+  console.log(date);
+  const currDate = (date.getDate());
+  const afterDate = date.setDate(currDate + extraDay); 
+  console.log(new Date(afterDate));
+}
+
+const date = new Date('2024-02-29');
+// const newDate = addDaysToDate(date, 7);
+
+
+const updateText = (x)=> {
+  console.log('abhi', x);
+}
+
+// setInterval(()=>updateText(5),1000);
+
+
+
+
+
+// setInterval(()=> {
+//   const currTime = new Date().toLocaleTimeString();
+
+//   console.log(currTime);
+// },1000)
+
+
+
+
+
+  </script>
+</body>
+</html>
