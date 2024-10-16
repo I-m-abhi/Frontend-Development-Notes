@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form in HTML with styling</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="form-container">
+    <form action="">
+      <div>
+        <label for="userName">Name</label>
+        <input id='userName' type="text" placeholder="Enter your Name">
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id='email' type="email" placeholder="Enter your Email ID">
+      </div>
+      <div>
+        <label for="phone">Mobile No.</label>
+        <input id='phone' type="tel" placeholder="Enter your Mobile No.">
+      </div>
+      <div>
+        <label for="dob">Date of Birth</label>
+        <input id='dob' type="date">
+      </div>
+      <div>
+        <label for="color">Choose your Favourite Color</label>
+        <input id='color' type="color">
+      </div>
+      <div>
+        <label for="gender">Gender</label>
+        <select id="gender">
+          <option value="" selected disabled>Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div>
+        <p>Which Programming Language You Liked Most</p>
+        <input type="radio" id="ts" name="language">
+        <label for="ts">Type Script</label>
+        <input type="radio" id="c++" name="language">
+        <label for="c++">C++</label>
+        <input type="radio" id="python" name="language">
+        <label for="python">Python</label>
+        <input type="radio" id="js" name="language">
+        <label for="js">Java Script</label>
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input id='password' type="password" placeholder="Enter your Password">
+      </div>
+      <div>
+        <label for="feedback"></label>
+        <textarea id="feedback">Kindly share your Feedback with us</textarea>
+      </div>
+      <div>
+        <input type="checkbox" id="checkbox">
+        <label for="checkbox">I agreed with all the Term's & Conditions</label>
+      </div>
+      <div>
+        <input type="submit" value="Submit Now">
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
