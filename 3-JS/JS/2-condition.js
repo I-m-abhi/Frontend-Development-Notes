@@ -14,7 +14,7 @@ let wholeNumber = 0;
 if(wholeNumber === 0){
   console.log('Number is Zero');
 }else if(wholeNumber > 0){
-  console.log('Number is Positive');
+  console.log('Number is Positive'); 
 }else{
   console.log('Number is Negative');
 }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pseudo Classes</title>
+  <style>
+    .container ul p:first-child{
+      color: red;
+    }
+    .container ul p:last-child{
+      color: red;
+    }
+    .container ul li:nth-of-type(2){
+      color: rgb(118, 220, 8);
+    }
+    .container ul li:nth-child(even){
+      color: rgb(10, 239, 239);
+    }
+    .container ul li:first-of-type{
+      color: rgb(251, 211, 31);
+    }
+    .container ul li:last-of-type{
+      color: rgb(251, 211, 31);
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <div class="container">
+      <ul>
+        <p>paragraph inside ul first child</p>
+        <li>Home</li>
+        <li>About</li>
+        <li>Project</li>
+        <li>Services</li>
+        <li>contact</li>
+        <li>Blog</li>
+        <li>Architecture</li>
+        <p>paragraph inside ul last child</p>
+      </ul>
+    </div>
+  </section>
+</body>
+</html>
