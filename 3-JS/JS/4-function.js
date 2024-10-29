@@ -26,29 +26,29 @@ const calculator = (num1, num2, operator)=> {
 
 // Write a function to reverse a given string
 const givenString = 'abhisasa2001@gmail.com';
-const reverseString = ()=> {
-  for(i = givenString.length - 1; i >= 0; i--){
-    console.log(givenString[i]);
+
+const reverseString = function (){
+  let result = '';
+  for(i=givenString.length-1; i>=0; i--){
+    result += givenString[i]
   }
+  console.log(result);
 }
 // reverseString();
 
 // Create a function to determine if a given string is PALINDROME
 
 const palindromeString = 'aaabbaaa';
+
 const palindrome = ()=> {
-  let normalString;
-  let reverseString;
-  for(i = palindromeString.length - 1; i >= 0; i--){
-    reverseString = palindromeString[i];
+  let result = '';
+  for(i=palindromeString.length-1; i>=0; i--){
+    result += palindromeString[i]
   }
-  for(i = 0; i <= palindromeString.length - 1; i++){
-    normalString = palindromeString[i];
-  }
-  if(normalString === reverseString){
-    console.log('Its a Palindrome String');
+  if(result === palindromeString){
+    console.log('Palindrome String');
   }else{
-    console.log('not a Palindrome String');
+    console.log('Not a Palindrome String');
   }
 }
 // palindrome();
