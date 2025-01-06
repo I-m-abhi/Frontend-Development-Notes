@@ -8,15 +8,38 @@
 </head>
 
 <body>
-  <h1>Java Script</h1>
-  
-  <script src="./array.js"></script>
+  <h1>Java Script Learning</h1>
 
-  <!-- Script of dom inside dom.html -->
+  <script>
+    let age = 19;
+    let isRegistered = true;
+    let isCitizen = false;
 
-  <!-- <script src="./JS/HOF.js"></script> -->
-  <!-- <script src="./JS/mapFilterReduce.js"></script> -->
-  <!-- <script src="./JS/promise.js"></script> -->
+    if(age >= 18) {
+      if(isCitizen && isRegistered) {
+        console.log("You are eligible to vote");
+      }else if(isCitizen == false) {
+        console.log("you are not eligible to vote due to citizen status");
+      }else if (isRegistered == false) {
+        console.log("you are not eligible to vote due to your registration status");
+      }
+    }else {
+      console.log("you can't vote")
+    }
+
+    // if(age >= 18 && isCitizen && isRegistered){
+    //   console.log("You are eligible to vote");
+    // }
+    // if(age < 18 && isCitizen==false && isRegistered==false) {
+    //   console.log("you are not eligible to vote");
+    // }
+    // if(age >= 18 && isCitizen==false) {
+    //   console.log("you are not eligible to vote due to citizen status");
+    // }
+    // if(age >= 18 && isCitizen && isRegistered==false) {
+    //   console.log("you are not eligible to vote due to your registration status");
+    // }
+  </script>
 </body>
 
 </html>
